@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\workspace\\Android\\IOT-Espressif-Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer.png",
+        "source": "D:\\workspace\\Android\\IOT-Espressif-Android\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer.png"
+    },
+    {
+        "merged": "D:\\workspace\\Android\\IOT-Espressif-Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\drawer_shadow.9.png",
+        "source": "D:\\workspace\\Android\\IOT-Espressif-Android\\app\\src\\main\\res\\drawable-mdpi\\drawer_shadow.9.png"
+    },
+    {
+        "merged": "D:\\workspace\\Android\\IOT-Espressif-Android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\app_icon.png",
+        "source": "D:\\workspace\\Android\\IOT-Espressif-Android\\app\\src\\main\\res\\drawable-mdpi\\app_icon.png"
+    }
+]

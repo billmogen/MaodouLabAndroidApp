@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\workspace\\Android\\IOT-Espressif-Android\\app\\build\\intermediates\\res\\merged\\debug\\anim\\esp_pull_to_refresh_hint.xml",
+        "source": "D:\\workspace\\Android\\IOT-Espressif-Android\\app\\src\\main\\res\\anim\\esp_pull_to_refresh_hint.xml"
+    },
+    {
+        "merged": "D:\\workspace\\Android\\IOT-Espressif-Android\\app\\build\\intermediates\\res\\merged\\debug\\anim\\esp_welcome_translate_in.xml",
+        "source": "D:\\workspace\\Android\\IOT-Espressif-Android\\app\\src\\main\\res\\anim\\esp_welcome_translate_in.xml"
+    },
+    {
+        "merged": "D:\\workspace\\Android\\IOT-Espressif-Android\\app\\build\\intermediates\\res\\merged\\debug\\anim\\esp_welcome_translate_out.xml",
+        "source": "D:\\workspace\\Android\\IOT-Espressif-Android\\app\\src\\main\\res\\anim\\esp_welcome_translate_out.xml"
+    }
+]

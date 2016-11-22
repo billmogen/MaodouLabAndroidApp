@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\daocore.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ee25c39ae32aff3056fdc826d024e3e3dc0c9c70">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\daocore_54598d63583f2816a417808b138529d95cdfe48e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\litepal_xm.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="907a968331eacae75c2eaa43885fac5103489ee4">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\litepal_xm_f89331563e9f17076376aa991860713d36794a17\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="08a5bd4ff4de374070239f735a5f369c4c0e8864">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_022844da1d501ae2ffc28e5d99ef5cace2631034\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\jmdns-3.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="7ba2dcf7effb5ca9b00736b2a066fff3dd01d432">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\jmdns-3.4.1_307a60aac24f0db286522b45908117f96dc615d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\android-support-v13.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="519b9a1023f275c226c88be0eeada916574fd638">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\android-support-v13_ebad278fc71af34a327b9fa632a872a2a046c430\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\billmogen\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.2.2\285cb9c666f0f0f3dd8a1be04e1f457eb7b15113\jackson-annotations-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-annotations-2.2.2_b6c24b5b811b54af8b98c21f510061f90d60ae63\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\recyclerview-v7-21.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\recyclerview-v7-21.0.3_9fc63070db69fbe221f29581de1a457394aa4608\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\log4j-1.2.17.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="4f90475694c41965c9a0c8bac53ea5c690dea446">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\log4j-1.2.17_2f9a4f14d065e94f875ecbaf24579d977d74541a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\afinal_0.5.1_bin.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ae398c74701392473b9cb488c76a92576d6f548c">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\afinal_0.5.1_bin_5c104172d9c5f3ab53970b36288418064977e43f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\TingPhoneOpenSDK_1.0.1.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="066b14d8a850787cf9c7736920da24af3ada27e9">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\TingPhoneOpenSDK_1.0.1.6_f386430c8f80978474df378c6ea28492ae2832a5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\billmogen\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.4.0\5b72bf48563ea8410e650de14aa33ff69a3e8c35\okio-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.4.0_3b14bb03d5814754c14d89a96ed5d6f342086720\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\achartengine-1.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="9932e3fb9fbe54e80873e77f72a99f79e33b3250">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\achartengine-1.1.0_36193e19756c460c437f8a81c51275303fa685e4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\program\android studio\gradle\m2repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.2.4_c35ea3ebba4f4e41e338fe113390c9865a1397b9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="3c88843ea1be609d69845418bd868bb0cc972cd2">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_37e5b696f253ba206b2cd3028abecf76c2116e70\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\billmogen\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.2.2\3c8f6018eaa72d43b261181e801e6f8676c16ef6\jackson-databind-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="3c8f6018eaa72d43b261181e801e6f8676c16ef6">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-databind-2.2.2_1a87be22d2a80904ffc24481087b46f256d7d6ea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\billmogen\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.2.2\d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b\jackson-core-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-core-2.2.2_0431fa11cde6debc24b94089050d81a518793129\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\okhttp-urlconnection-2.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ecb8c7b0b1367f5f8c873df85ac485df5c535c5a">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\okhttp-urlconnection-2.2.0_5529f76f177fc121f573565d94a9d4ee80528f85\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\libEsptouch_v0.3.3.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="bbf6f18b70cec3e37452676bb5961f00d59a89ec">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\libEsptouch_v0.3.3.4_88ebeb4bb4c330bf8b765d9ff96d5787fcc26ce1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\billmogen\.gradle\caches\modules-2\files-2.1\com.wilddog.client\wilddog-auth-android\2.0.3\a7046dc044905c6d344910c78149439a8060c99b\wilddog-auth-android-2.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="a7046dc044905c6d344910c78149439a8060c99b">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\wilddog-auth-android-2.0.3_778c56284735cc6e98e03bda56d81d636dd0a01f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\ShareSDK.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="861f9baf415b6bf186e6a8dd7f32b769b9ccdee5">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\ShareSDK_52f09d895363eb36e6f2e3baa4b203816644fef8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\billmogen\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.4.0\40340c0748190fe897baf7bffbc1b282734294e5\okhttp-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-2.4.0_b8b1b1ae8b229e7072ff799030f42d452c18e58f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\workspace\Android\IOT-Espressif-Android\app\libs\zxing.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="96b67e377ff4637ff1fa3bbe9ad7183773935f39">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\2\zxing_f8b65067cdd9853c74c398d81ef650aedfa2dca0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\billmogen\.gradle\caches\modules-2\files-2.1\com.wilddog.client\wilddog-common-android\2.0.1\4f61006a1130a2ae32d93f1607b179e374593db2\wilddog-common-android-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="4f61006a1130a2ae32d93f1607b179e374593db2">
+        <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\wilddog-common-android-2.0.1_05b6107423fa5f7cd5fb17e6fd013795025cbab5\classes.dex" />
+    </item>
+
+</items>

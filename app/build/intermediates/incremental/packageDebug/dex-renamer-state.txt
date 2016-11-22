@@ -1,0 +1,7 @@
+#Tue Nov 22 18:03:28 CST 2016
+base.0=D\:\\workspace\\Android\\IOT-Espressif-Android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_37e5b696f253ba206b2cd3028abecf76c2116e70
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=D\:\\workspace\\Android\\IOT-Espressif-Android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_022844da1d501ae2ffc28e5d99ef5cace2631034\\classes.dex
+base.1=D\:\\workspace\\Android\\IOT-Espressif-Android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_022844da1d501ae2ffc28e5d99ef5cace2631034
+file.0=D\:\\workspace\\Android\\IOT-Espressif-Android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_37e5b696f253ba206b2cd3028abecf76c2116e70\\classes.dex

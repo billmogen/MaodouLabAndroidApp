@@ -1,0 +1,104 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .gitignore
+* .idea\
+* .idea\IOT-Espressif-Android.iml
+* .idea\compiler.xml
+* .idea\copyright\
+* .idea\copyright\profiles_settings.xml
+* .idea\encodings.xml
+* .idea\misc.xml
+* .idea\modules.xml
+* .idea\workspace.xml
+* ESPRESSIF MIT LICENSE V1.LICENSE
+* README.md
+* documents\
+* documents\third-party_login.txt
+* python\
+* python\log4j.xml
+* python\xml_file_search.py
+* python\xml_parse.py
+* python\xml_read_write.py
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+gson-2.2.4.jar => com.google.code.gson:gson:2.2.4
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.2.4.jar => version 2.2.4 in com.google.code.gson:gson:2.2.4
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* assets\ => app\src\main\assets\
+* java\ACTION\ => app\src\main\java\
+* java\BASE\ => app\src\main\java\
+* java\COMMAND\ => app\src\main\java\
+* java\DB\ => app\src\main\java\
+* java\DB-gen\ => app\src\main\java\
+* java\INTERFACE\ => app\src\main\java\
+* java\LOG\ => app\src\main\java\
+* java\MODEL\ => app\src\main\java\
+* java\TYPE\ => app\src\main\java\
+* java\UI\ => app\src\main\java\
+* java\UTIL\ => app\src\main\java\
+* libs\achartengine-1.1.0.jar => app\libs\achartengine-1.1.0.jar
+* libs\afinal_0.5.1_bin.jar => app\libs\afinal_0.5.1_bin.jar
+* libs\android-support-v13.jar => app\libs\android-support-v13.jar
+* libs\armeabi\libxmediaplayer.so => app\src\main\jniLibs\armeabi\libxmediaplayer.so
+* libs\armeabi\libxmediaplayer_x.so => app\src\main\jniLibs\armeabi\libxmediaplayer_x.so
+* libs\daocore.jar => app\libs\daocore.jar
+* libs\jmdns-3.4.1.jar => app\libs\jmdns-3.4.1.jar
+* libs\libEsptouch_v0.3.3.4.jar => app\libs\libEsptouch_v0.3.3.4.jar
+* libs\litepal_xm.jar => app\libs\litepal_xm.jar
+* libs\log4j-1.2.17.jar => app\libs\log4j-1.2.17.jar
+* libs\okhttp-2.4.0.jar => app\libs\okhttp-2.4.0.jar
+* libs\okhttp-urlconnection-2.2.0.jar => app\libs\okhttp-urlconnection-2.2.0.jar
+* libs\okio-1.4.0.jar => app\libs\okio-1.4.0.jar
+* libs\recyclerview-v7-21.0.3.jar => app\libs\recyclerview-v7-21.0.3.jar
+* libs\ShareSDK.jar => app\libs\ShareSDK.jar
+* libs\TingPhoneOpenSDK_1.0.1.6.jar => app\libs\TingPhoneOpenSDK_1.0.1.6.jar
+* libs\zxing.jar => app\libs\zxing.jar
+* res\ => app\src\main\res\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
