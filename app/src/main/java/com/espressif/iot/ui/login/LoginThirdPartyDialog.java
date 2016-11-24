@@ -197,7 +197,7 @@ public class LoginThirdPartyDialog implements PlatformActionListener, OnClickLis
         espPlat.setAccessToken(token);
         espPlat.setState(state);
         espPlat.setOpenId(userId);
-        
+        /*
         new LoginTask(mContext)
         {
             @Override
@@ -215,6 +215,6 @@ public class LoginThirdPartyDialog implements PlatformActionListener, OnClickLis
                     mLoginListener.onLoginComplete(result);
                 }
             }
-        }.execute();
+        }.execute();*/
     }
 }

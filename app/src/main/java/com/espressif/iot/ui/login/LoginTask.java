@@ -9,7 +9,7 @@ import com.espressif.iot.R;
 import com.espressif.iot.type.user.EspLoginResult;
 import com.espressif.iot.type.user.EspThirdPartyLoginPlat;
 
-public abstract class LoginTask extends AsyncTask<EspThirdPartyLoginPlat, Void, EspLoginResult>
+public abstract class LoginTask extends AsyncTask<Integer, Void, EspLoginResult>
 {
     private Context mContext;
     
@@ -30,9 +30,9 @@ public abstract class LoginTask extends AsyncTask<EspThirdPartyLoginPlat, Void, 
     }
     
     @Override
-    protected EspLoginResult doInBackground(EspThirdPartyLoginPlat... params)
+    protected EspLoginResult doInBackground(Integer... params)
     {
-        return doLogin();
+        return doLoginTest();
     }
     
     @Override
@@ -60,7 +60,7 @@ public abstract class LoginTask extends AsyncTask<EspThirdPartyLoginPlat, Void, 
         loginResult(result);
     }
     
-    public abstract EspLoginResult doLogin();
+    public abstract EspLoginResult doLoginTest();
     
     public void loginResult(EspLoginResult result)
     {

@@ -1,8 +1,10 @@
 package com.espressif.iot.ui.login;
 
 import com.espressif.iot.R;
+import com.espressif.iot.base.net.wifi.WifiAdmin;
 import com.espressif.iot.type.user.EspLoginResult;
 import com.espressif.iot.ui.login.LoginThirdPartyDialog.OnLoginListener;
+import com.espressif.iot.ui.main.EspMainActivity;
 import com.espressif.iot.ui.register.RegisterActivity;
 import com.espressif.iot.user.IEspUser;
 import com.espressif.iot.user.builder.BEspUser;
@@ -10,6 +12,8 @@ import com.espressif.iot.util.AccountUtil;
 import com.espressif.iot.util.EspStrings;
 import com.wilddog.wilddogauth.WilddogAuth;
 import com.wilddog.wilddogauth.core.Task;
+import com.wilddog.wilddogauth.core.WilddogAuthError;
+import com.wilddog.wilddogauth.core.exception.WilddogAuthException;
 import com.wilddog.wilddogauth.core.listener.OnCompleteListener;
 import com.wilddog.wilddogauth.core.result.AuthResult;
 import com.wilddog.wilddogauth.model.WilddogUser;
@@ -151,7 +155,7 @@ public class LoginActivity extends Activity implements OnClickListener, OnEditor
         new LoginTask(this)
         {
             @Override
-            public EspLoginResult doLogin()
+            public EspLoginResult doLoginTest()
             {
                 if (accountType == AccountUtil.TYPE_EMAIL)
                 {
@@ -177,7 +181,7 @@ public class LoginActivity extends Activity implements OnClickListener, OnEditor
                     loginSuccess();
                 }
             }
-        }.execute();
+        }.execute(1);
     }
     
     private OnLoginListener mThirdPartyLoginListener = new OnLoginListener()
@@ -194,23 +198,36 @@ public class LoginActivity extends Activity implements OnClickListener, OnEditor
     };
     
     private void loginSuccess() {
-        setResult(RESULT_OK);
+        //setResult(RESULT_OK);
+        //finish();
+        Intent mainIntent = new Intent(this, EspMainActivity.class);
+        startActivity(mainIntent);
         finish();
     }
 
     public EspLoginResult doLoginWilddogWithEmail(String userName, String password)
     {
+        WifiAdmin wifiAdmin = WifiAdmin.getInstance();
+        if (!wifiAdmin.isNetworkAvailable())
+        {
+            return EspLoginResult.NETWORK_UNACCESSIBLE;
+        }
+
+
         mAuth.signInWithEmailAndPassword(userName, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(Task<AuthResult> task) {
 
                 if (!task.isSuccessful()) {
+                   // WilddogAuthException wilddogAuthException = new WilddogAuthException();
                     Log.w("Wilddog", "signInWithEmail", task.getException());
-                    Toast.makeText(LoginActivity.this, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show();
+                    
+                    //Toast.makeText(LoginActivity.this, "Authentication failed.",
+                      //      Toast.LENGTH_SHORT).show();
+
                 }else{
                     Log.d("Wilddog", "signInWithEmail:onComplete:" + task.isSuccessful());
-                    Toast.makeText(LoginActivity.this, "Login Sucess!", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LoginActivity.this, "Login Sucess!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -219,9 +236,9 @@ public class LoginActivity extends Activity implements OnClickListener, OnEditor
         if (wUser != null)
         {
             //EspUser user = BEspUser.getBuilder().getInstance();
-            mUser.setUserKey(wUser.getProviderId());
-            mUser.setUserId(Long.parseLong(wUser.getUid()));
-            mUser.setUserName(wUser.getDisplayName());
+            mUser.setUserKey(wUser.getUid());
+            mUser.setUserId((long)473648);
+            mUser.setUserName(wUser.getEmail());
             mUser.setUserEmail(wUser.getEmail());
             mUser.saveUserInfoInDB();
             mUser.clearUserDeviceLists();

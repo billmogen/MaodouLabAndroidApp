@@ -25,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="08a5bd4ff4de374070239f735a5f369c4c0e8864">
+        sha1="a242a1d7c82d641d0125b97e9b8c7fae1d47cacb">
         <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_022844da1d501ae2ffc28e5d99ef5cace2631034\classes.dex" />
     </item>
     <item
@@ -124,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="3c88843ea1be609d69845418bd868bb0cc972cd2">
+        sha1="04d9cc36c5eced871b94d3dd997780d7b4333b2a">
         <dex dex="D:\workspace\Android\IOT-Espressif-Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_37e5b696f253ba206b2cd3028abecf76c2116e70\classes.dex" />
     </item>
     <item

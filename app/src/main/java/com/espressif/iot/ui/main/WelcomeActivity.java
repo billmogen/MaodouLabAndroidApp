@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 
 import com.espressif.iot.R;
 import com.espressif.iot.base.application.EspApplication;
+import com.espressif.iot.ui.login.LoginActivity;
 import com.espressif.iot.ui.widget.adapter.EspPagerAdapter;
 import com.espressif.iot.ui.widget.view.EspViewPager;
 
@@ -167,7 +168,7 @@ public class WelcomeActivity extends Activity
     private void login()
     {
         // Go to LoginActivity
-        Intent loginIntent = new Intent(this, EspMainActivity.class);
+        Intent loginIntent = new Intent(this, LoginActivity.class);
         startActivity(loginIntent);
         
         finish();

@@ -174,6 +174,7 @@ public class EspUser implements IEspUser
     public Void saveUserInfoInDB()
     {
         IOTUserDBManager.getInstance().changeUserInfo(mUserId, mUserEmail, mUserKey, mUserName);
+        //IOTUserDBManager.getInstance().changeUserInfo( mUserEmail, mUserKey, mUserName);
         return null;
     }
     

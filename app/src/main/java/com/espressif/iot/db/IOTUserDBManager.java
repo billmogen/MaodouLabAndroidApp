@@ -52,9 +52,9 @@ public class IOTUserDBManager implements IUserDBManager, IEspSingletonObject
      * @param name user name
      */
     @Override
-    public void changeUserInfo(long id, String email, String key, String name)
+    public void changeUserInfo( long id, String email, String key, String name)
     {
-        log.info(Thread.currentThread().toString() + "##changeUserInfo(id=[" + id + "],email=[" + email
+        log.info(Thread.currentThread().toString() + "##changeUserInfo(id=[" + id + "], email=[" + email
             + "],key=[" + key + "]");
         Query<UserDB> query = userDao.queryBuilder().where(Properties.IsLastLogin.eq(true)).build();
         UserDB result = query.unique();
@@ -64,7 +64,7 @@ public class IOTUserDBManager implements IUserDBManager, IEspSingletonObject
             result.setIsLastLogin(false);
             userDao.update(result);
         }
-        result = new UserDB(id, email, key, name, true);
+        result = new UserDB(id,email, key, name, true);
         userDao.insertOrReplace(result);
     }
     

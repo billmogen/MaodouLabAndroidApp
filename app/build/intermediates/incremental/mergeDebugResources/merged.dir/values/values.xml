@@ -167,7 +167,7 @@
 	    <item quantity="one">%d device registered</item>
 	    <item quantity="many">%d devices registered</item>
 	</plurals>
-    <string name="app_name">IOT Espressif</string>
+    <string name="app_name">MD Lab</string>
     <string name="app_upload">Share App (With File)</string>
     <string name="app_upload_extinfo">Share App (With Script)</string>
     <string name="baidutieba_client_inavailable">Tieba client not exists or the version is too low</string>

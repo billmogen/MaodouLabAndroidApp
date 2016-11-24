@@ -4,29 +4,29 @@
     density="400dpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="118594216473478"
+    timestamp="224269606322115"
     token="-5703011841533157574"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="6933" />
+        duration="7960" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="9842" />
+        duration="73" />
     <task
         name="verifier"
-        duration="3602" />
+        duration="7" />
 
     <artifact
         location="D:\workspace\Android\IOT-Espressif-Android\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="118594216473478"
+        timestamp="224269606322115"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\workspace\Android\IOT-Espressif-Android\app\build\outputs\apk\app-debug.apk"

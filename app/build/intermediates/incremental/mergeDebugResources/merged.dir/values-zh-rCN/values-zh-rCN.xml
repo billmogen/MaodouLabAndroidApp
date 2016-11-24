@@ -103,7 +103,7 @@
     <plurals name="esp_esptouch_device_registered">
 	    <item quantity="other">已注册 %d 个设备</item>
 	</plurals>
-    <string name="app_name">IOT Espressif</string>
+    <string name="app_name">MD Lab</string>
     <string name="app_upload">应用分享（携带文件）</string>
     <string name="app_upload_extinfo">应用分享（携带脚本）</string>
     <string name="baidutieba">百度贴吧</string>

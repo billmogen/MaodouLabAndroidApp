@@ -1,4 +1,4 @@
-#Tue Nov 22 18:03:28 CST 2016
+#Wed Nov 23 23:22:32 CST 2016
 base.0=D\:\\workspace\\Android\\IOT-Espressif-Android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_37e5b696f253ba206b2cd3028abecf76c2116e70
 renamed.1=classes.dex
 renamed.0=classes2.dex
