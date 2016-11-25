@@ -1,6 +1,9 @@
 package com.espressif.iot.ui.login;
 
 import com.espressif.iot.R;
+import com.espressif.iot.base.net.wifi.WifiAdmin;
+import com.espressif.iot.type.user.EspLoginResult;
+import com.espressif.iot.type.user.EspRegisterResult;
 import com.espressif.iot.type.user.EspResetPasswordResult;
 import com.espressif.iot.ui.main.EspActivityAbs;
 import com.espressif.iot.user.IEspUser;
@@ -132,5 +135,17 @@ public class ResetUserPasswordActivity extends EspActivityAbs implements OnClick
                     break;
             }
         }
+    }
+
+    public EspResetPasswordResult doActionRestPasswordWithWilddog(String email)
+    {
+
+        WifiAdmin wifiAdmin = WifiAdmin.getInstance();
+        if (!wifiAdmin.isNetworkAvailable())
+        {
+            return EspResetPasswordResult.FAILED;
+        }
+
+        
     }
 }
