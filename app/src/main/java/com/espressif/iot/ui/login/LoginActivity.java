@@ -14,8 +14,10 @@ import com.wilddog.wilddogauth.WilddogAuth;
 import com.wilddog.wilddogauth.core.Task;
 import com.wilddog.wilddogauth.core.WilddogAuthError;
 import com.wilddog.wilddogauth.core.exception.WilddogAuthException;
+import com.wilddog.wilddogauth.core.exception.WilddogException;
 import com.wilddog.wilddogauth.core.listener.OnCompleteListener;
 import com.wilddog.wilddogauth.core.result.AuthResult;
+
 import com.wilddog.wilddogauth.model.WilddogUser;
 import com.wilddog.wilddogcore.WilddogApp;
 import com.wilddog.wilddogcore.WilddogOptions;
@@ -87,6 +89,7 @@ public class LoginActivity extends Activity implements OnClickListener, OnEditor
         
         //mThirdPartyLoginDialog = new LoginThirdPartyDialog(this);
         //mThirdPartyLoginDialog.setOnLoginListener(mThirdPartyLoginListener);
+
     }
     
     @Override
@@ -218,19 +221,24 @@ public class LoginActivity extends Activity implements OnClickListener, OnEditor
             @Override
             public void onComplete(Task<AuthResult> task) {
 
-                if (!task.isSuccessful()) {
-                   // WilddogAuthException wilddogAuthException = new WilddogAuthException();
-                    Log.w("Wilddog", "signInWithEmail", task.getException());
-                    
-                    //Toast.makeText(LoginActivity.this, "Authentication failed.",
-                      //      Toast.LENGTH_SHORT).show();
 
-                }else{
+                if (!task.isSuccessful()) {
+
+                    if (task.getException().getClass().getSimpleName().equals("WilddogAuthException")) {
+                        String errorCode = ((WilddogAuthException) task.getException()).getErrorCode();
+
+                        Log.d("Wilddog", "errorCode" + errorCode);
+                    }
+
+
+                } else {
                     Log.d("Wilddog", "signInWithEmail:onComplete:" + task.isSuccessful());
                     //Toast.makeText(LoginActivity.this, "Login Sucess!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+
 
         WilddogUser wUser = mAuth.getInstance().getCurrentUser();
         if (wUser != null)
@@ -238,7 +246,7 @@ public class LoginActivity extends Activity implements OnClickListener, OnEditor
             //EspUser user = BEspUser.getBuilder().getInstance();
             mUser.setUserKey(wUser.getUid());
             mUser.setUserId((long)473648);
-            mUser.setUserName(wUser.getEmail());
+            mUser.setUserName(wUser.getDisplayName());
             mUser.setUserEmail(wUser.getEmail());
             mUser.saveUserInfoInDB();
             mUser.clearUserDeviceLists();

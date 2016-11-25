@@ -29,6 +29,7 @@ import com.espressif.iot.user.IEspUser;
 import com.espressif.iot.user.builder.BEspUser;
 import com.espressif.iot.util.EspDefaults;
 import com.espressif.iot.util.EspStrings;
+import com.wilddog.wilddogauth.WilddogAuth;
 
 import android.app.ActionBar;
 import android.os.AsyncTask;
@@ -240,6 +241,7 @@ public class EspMainActivity extends Activity implements NavigationDrawerCallbac
             UdpServer.INSTANCE.close();
             mUser.clearUserDeviceLists();
             EspUpgradeHelper.INSTANCE.clear();
+            WilddogAuth.getInstance().signOut();
 
             return null;
         }

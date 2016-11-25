@@ -3,14 +3,30 @@ package com.espressif.iot.ui.register;
 import org.apache.log4j.Logger;
 
 import com.espressif.iot.R;
+import com.espressif.iot.base.net.wifi.WifiAdmin;
+import com.espressif.iot.type.user.EspLoginResult;
+import com.espressif.iot.type.user.EspRegisterResult;
+import com.espressif.iot.user.IEspUser;
+import com.espressif.iot.user.builder.BEspUser;
+import com.wilddog.wilddogauth.WilddogAuth;
+import com.wilddog.wilddogauth.core.Task;
+import com.wilddog.wilddogauth.core.listener.OnCompleteListener;
+import com.wilddog.wilddogauth.core.request.UserProfileChangeRequest;
+import com.wilddog.wilddogauth.core.result.AuthResult;
+import com.wilddog.wilddogauth.model.WilddogUser;
+import com.wilddog.wilddogcore.WilddogApp;
+import com.wilddog.wilddogcore.WilddogOptions;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static com.espressif.iot.command.user.IEspCommandUserLogin.URL;
 
 public class RegisterActivity extends Activity
 {
@@ -107,4 +123,7 @@ public class RegisterActivity extends Activity
             return false;
         }
     }
+
+
+
 }

@@ -8,7 +8,7 @@ public enum EspRegisterResult
     
     public static EspRegisterResult getEspLoginResult(int status)
     {
-        if (status == HttpStatus.SC_OK)
+        if (status == HttpStatus.SC_OK || status == 201)
         {
             return SUC;
         }

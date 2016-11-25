@@ -2,21 +2,34 @@ package com.espressif.iot.ui.register;
 
 import com.espressif.iot.R;
 import com.espressif.iot.base.api.EspBaseApiUtil;
+import com.espressif.iot.base.net.wifi.WifiAdmin;
+import com.espressif.iot.type.user.EspLoginResult;
 import com.espressif.iot.type.user.EspRegisterResult;
 import com.espressif.iot.user.IEspUser;
 import com.espressif.iot.user.builder.BEspUser;
 import com.espressif.iot.util.AccountUtil;
 import com.espressif.iot.util.EspStrings;
+import com.wilddog.wilddogauth.WilddogAuth;
+import com.wilddog.wilddogauth.core.Task;
+import com.wilddog.wilddogauth.core.exception.WilddogAuthException;
+import com.wilddog.wilddogauth.core.listener.OnCompleteListener;
+import com.wilddog.wilddogauth.core.request.UserProfileChangeRequest;
+import com.wilddog.wilddogauth.core.result.AuthResult;
+import com.wilddog.wilddogauth.model.WilddogUser;
+import com.wilddog.wilddogcore.WilddogApp;
+import com.wilddog.wilddogcore.WilddogOptions;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +40,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.net.URL;
+import static com.espressif.iot.command.user.IEspCommandUserLogin.URL;
 public class RegisterEmailFragment extends Fragment implements OnClickListener, OnFocusChangeListener
 {
     public static final String TAG = "RegisterEmailFragment";
@@ -46,7 +61,7 @@ public class RegisterEmailFragment extends Fragment implements OnClickListener, 
     
     private static final int FIND_USERNAME_EXIST = 0;
     private static final int FIND_EMAIL_EXIST = 1;
-    
+    private int errorCode;
     private RegisterActivity mActivity;
     
     @Override
@@ -158,7 +173,8 @@ public class RegisterEmailFragment extends Fragment implements OnClickListener, 
             @Override
             protected EspRegisterResult doRegister()
             {
-                return mUser.doActionUserRegisterInternet(username, email, password);
+                //return mUser.doActionUserRegisterInternet(username, email, password);
+                return doActionUserRegisterWithWilddog(username, email, password);
             }
             
             @Override
@@ -177,7 +193,112 @@ public class RegisterEmailFragment extends Fragment implements OnClickListener, 
                 }
             }
         }.execute();
+
+
     }
+
+
+    public EspRegisterResult doActionUserRegisterWithWilddog( String username,  String email,  String password)
+    {
+
+        WifiAdmin wifiAdmin = WifiAdmin.getInstance();
+        if (!wifiAdmin.isNetworkAvailable())
+        {
+            return EspRegisterResult.NETWORK_UNACCESSIBLE;
+        }
+
+        //int resultFlag = 0;
+        WilddogOptions options = new WilddogOptions.Builder().setSyncUrl(URL).build();
+        WilddogApp.initializeApp(mActivity, options);
+        WilddogAuth mAuth = WilddogAuth.getInstance();
+        try {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(mActivity, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete( Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+
+                        //Toast.makeText(getActivity(), "注册成功", Toast.LENGTH_LONG).show();
+                        errorCode = 200;
+                        // Log.d("wilddog", "errorcode + " + errorCode);
+                    } else{
+                        // 错误处理
+                        String errorCodeStr = ((WilddogAuthException)task.getException()).getErrorCode();
+                        if (errorCodeStr.equals("email_already_in_use")) {
+                            errorCode = 409;
+                        } else {
+                            errorCode = 400;
+                        }
+
+                        Log.d("wilddog", "errorCode + " + errorCodeStr);
+
+                    }
+                }
+            });
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        while (errorCode == 0)
+        {
+
+        }
+        if (errorCode == 409 || errorCode == 400)
+        {
+            return EspRegisterResult.getEspLoginResult(errorCode);
+
+        }
+
+        WilddogUser wilddogUser = mAuth.getInstance().getCurrentUser();
+        if (wilddogUser != null && wilddogUser.getEmail().equals(email))
+        {
+            //用户已登录，更新用户displayName
+            UserProfileChangeRequest userProfileChangeRequest = new UserProfileChangeRequest.Builder()
+                    .setDisplayName(username).setPhotoUri(Uri.parse("https://example.com/path/photo.jpg")).build();
+            try {
+                wilddogUser.updateProfile(userProfileChangeRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(Task<Void> task) {
+                        if (task.isSuccessful())
+                        {
+                            String displayName = WilddogAuth.getInstance().getCurrentUser().getDisplayName();
+                            Log.d("wilddog", "displayName " + displayName );
+
+                            errorCode = 201;
+
+                        }
+                        else
+                        {
+                            Log.d("wilddog", "update username " + task.getException().toString());
+                        }
+                    }
+                });
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }
+        else
+        {
+            errorCode = 400;
+        }
+
+        while ((errorCode == 200) )
+        {
+
+        }
+
+        if (EspRegisterResult.getEspLoginResult(errorCode) == null)
+        {
+            return EspRegisterResult.NETWORK_UNACCESSIBLE;
+        }
+        //200 ok; 409 already ; 400 content error ; -200 network error
+        return EspRegisterResult.getEspLoginResult(errorCode);
+
+
+
+
+    }
+
 
     @Override
     public void onFocusChange(View v, boolean hasFocus)

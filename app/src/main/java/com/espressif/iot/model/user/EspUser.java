@@ -140,6 +140,7 @@ import com.espressif.iot.util.BSSIDUtil;
 import com.espressif.iot.util.EspStrings;
 import com.espressif.iot.util.RandomUtil;
 import com.espressif.iot.util.TimeUtil;
+import com.wilddog.wilddogauth.WilddogAuth;
 
 public class EspUser implements IEspUser
 {
@@ -840,6 +841,10 @@ public class EspUser implements IEspUser
         mStaDeviceList.clear();
         mTempStaDeviceList.clear();
         unlockUserDeviceLists();
+
+        //wilddog user signout
+        WilddogAuth.getInstance().signOut();
+
     }
     
     @Override
