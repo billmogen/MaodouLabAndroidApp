@@ -9,6 +9,10 @@ import com.espressif.iot.ui.main.EspActivityAbs;
 import com.espressif.iot.user.IEspUser;
 import com.espressif.iot.user.builder.BEspUser;
 import com.espressif.iot.util.AccountUtil;
+import com.wilddog.wilddogauth.WilddogAuth;
+import com.wilddog.wilddogauth.core.Task;
+import com.wilddog.wilddogauth.core.exception.WilddogAuthException;
+import com.wilddog.wilddogauth.core.listener.OnCompleteListener;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -16,6 +20,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
@@ -29,7 +34,8 @@ public class ResetUserPasswordActivity extends EspActivityAbs implements OnClick
     
     private EditText mEmailET;
     private Button mConfirmBtn;
-    
+
+    private int errorCodeResetPassword = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -112,7 +118,7 @@ public class ResetUserPasswordActivity extends EspActivityAbs implements OnClick
         protected EspResetPasswordResult doInBackground(String... params)
         {
             String email = params[0];
-            return mUser.doActionResetPassword(email);
+            return doActionRestPasswordWithWilddog(email);
         }
         
         @Override
@@ -146,6 +152,29 @@ public class ResetUserPasswordActivity extends EspActivityAbs implements OnClick
             return EspResetPasswordResult.FAILED;
         }
 
-        
+        WilddogAuth mAuth = WilddogAuth.getInstance();
+        mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(Task<Void> task) {
+                if (task.isSuccessful()){
+                    errorCodeResetPassword = 200;
+                } else {
+                    String errorCodeStr = ((WilddogAuthException)task.getException()).getErrorCode();
+                    if (errorCodeStr.equals("invalid_user"))
+                    {
+                        errorCodeResetPassword = 404;
+                    } else {
+                        errorCodeResetPassword = 500;
+                    }
+
+                    Log.d("wilddog", "resetEmail+ " + task.getException().toString());
+                }
+            }
+        });
+        while(errorCodeResetPassword == 0)
+        {
+
+        }
+        return  EspResetPasswordResult.getResetPasswordResult(errorCodeResetPassword);
     }
 }

@@ -50,6 +50,12 @@ public abstract class LoginTask extends AsyncTask<Integer, Void, EspLoginResult>
             case NETWORK_UNACCESSIBLE:
                 msgRes = R.string.esp_login_result_network_unaccessible;
                 break;
+            case PASSWORD_ERR:
+                msgRes = R.string.esp_login_result_password_error;
+                break;
+            case NOT_REGISTER:
+                msgRes = R.string.esp_login_result_not_register;
+                break;
             default :
                 msgRes = R.string.esp_login_result_failed;
                 break;

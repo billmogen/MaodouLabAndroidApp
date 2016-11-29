@@ -52,6 +52,8 @@ public class LoginActivity extends Activity implements OnClickListener, OnEditor
     private WilddogAuth mAuth;
     private final static int REQUEST_REGISTER = 1;
 
+    private int errorCodeLogin = 0;
+
     WilddogOptions options = new WilddogOptions.Builder().setSyncUrl(URL).build();
 
     //private LoginThirdPartyDialog mThirdPartyLoginDialog;
@@ -216,6 +218,7 @@ public class LoginActivity extends Activity implements OnClickListener, OnEditor
             return EspLoginResult.NETWORK_UNACCESSIBLE;
         }
 
+        mAuth.signOut();
 
         mAuth.signInWithEmailAndPassword(userName, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -223,22 +226,30 @@ public class LoginActivity extends Activity implements OnClickListener, OnEditor
 
 
                 if (!task.isSuccessful()) {
+                    String errorCodeStr = ((WilddogAuthException) task.getException()).getErrorCode();
+                    if (errorCodeStr.equals("email_not_exist"))
+                    {
+                        errorCodeLogin = 404;
+                    } else if (errorCodeStr.equals("invalid_password")) {
 
-                    if (task.getException().getClass().getSimpleName().equals("WilddogAuthException")) {
-                        String errorCode = ((WilddogAuthException) task.getException()).getErrorCode();
-
-                        Log.d("Wilddog", "errorCode" + errorCode);
+                        errorCodeLogin = 403;
+                    } else {
+                        errorCodeLogin = 500;
                     }
 
 
                 } else {
+                    errorCodeLogin = 200;
                     Log.d("Wilddog", "signInWithEmail:onComplete:" + task.isSuccessful());
                     //Toast.makeText(LoginActivity.this, "Login Sucess!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+        while(errorCodeLogin == 0)
+        {
 
-
+        }
+        // 403 password error; 404 not register
 
         WilddogUser wUser = mAuth.getInstance().getCurrentUser();
         if (wUser != null)
@@ -254,8 +265,8 @@ public class LoginActivity extends Activity implements OnClickListener, OnEditor
             return EspLoginResult.SUC;
 
         } else {
-            Toast.makeText(LoginActivity.this, "Pls Login first!", Toast.LENGTH_SHORT).show();
-            return EspLoginResult.FAILED;
+            //Toast.makeText(LoginActivity.this, "Pls Login first!", Toast.LENGTH_SHORT).show();
+            return EspLoginResult.getEspLoginResult(errorCodeLogin);
         }
 
 

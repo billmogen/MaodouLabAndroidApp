@@ -8,6 +8,9 @@
     <color name="esp_main_drawer_background">#fff0f0f2</color>
     <color name="esp_main_drawer_right_item_checked">#ff738ffe</color>
     
+	<color name="bg_white">#FFFFFF</color>
+    <color name="div_white">#E5E5E5</color>
+	
     <color name="esp_text_hint_color">#dddddd</color>
     
     <color name="esp_qrcode_viewfinder_mask">#60000000</color>
