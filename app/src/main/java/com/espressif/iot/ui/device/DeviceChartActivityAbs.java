@@ -55,7 +55,7 @@ public abstract class DeviceChartActivityAbs extends DeviceActivityAbs implement
         mDateTV = (TextView)view.findViewById(R.id.date_text);
 
         mRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.refresh_layout);
-        mRefreshLayout.setColorSchemeResources(R.color.esp_actionbar_color);
+        //mRefreshLayout.setColorSchemeResources(R.color.esp_actionbar_color);
         mRefreshLayout.setOnRefreshListener(this);
 
         mChartViewContainer = (LinearLayout)view.findViewById(R.id.chartview_container);

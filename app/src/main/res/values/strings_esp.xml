@@ -368,6 +368,11 @@
     <string name="esp_group_icon_select">Select icon</string>
     <string name="esp_group_input_name">Input group name</string>
     <string name="esp_group_unnamed">Unnamed</string>
+    
+    <string name="esp_tab_search">Search</string>
+    <string name="esp_tab_guide">Guide</string>
+    <string name="esp_tab_personal">Personal</string>
+
 </resources>
 <!-- 
 &#8230;   =   ...

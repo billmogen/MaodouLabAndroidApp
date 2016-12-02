@@ -85,7 +85,7 @@ public class DeviceSoftAPConfigureActivity extends EspActivityAbs
             mShared.getInt(EspStrings.Key.SETTINGS_KEY_DEVICE_AUTO_CONFIGURE, EspDefaults.AUTO_CONFIGRUE_RSSI);
 
         mRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.refresh_layout);
-        mRefreshLayout.setColorSchemeResources(R.color.esp_actionbar_color);
+        //mRefreshLayout.setColorSchemeResources(R.color.esp_actionbar_color);
         mRefreshLayout.setOnRefreshListener(this);
 
         mSoftApListView = (RecyclerView)findViewById(R.id.softap_list);

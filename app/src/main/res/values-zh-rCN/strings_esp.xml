@@ -366,4 +366,9 @@
     <string name="esp_group_icon_select">选择图标</string>
     <string name="esp_group_input_name">输入一个场景名</string>
     <string name="esp_group_unnamed">未命名</string>
+
+    <string name="esp_tab_search">发现</string>
+    <string name="esp_tab_guide">指导</string>
+    <string name="esp_tab_personal">个人</string>
+
 </resources>

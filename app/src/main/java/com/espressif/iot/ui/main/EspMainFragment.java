@@ -85,7 +85,7 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class EspMainFragment extends Fragment implements OnSharedPreferenceChangeListener, OnClickListener,
+public class EspMainFragment extends android.app.Fragment implements OnSharedPreferenceChangeListener, OnClickListener,
     OnItemClickListener, OnItemLongClickListener, OnLongClickListener, OnCheckedChangeListener, OnRefreshListener {
     private static final Logger log = Logger.getLogger(EspMainFragment.class);
 
@@ -214,7 +214,8 @@ public class EspMainFragment extends Fragment implements OnSharedPreferenceChang
         mAddGroupView.setOnClickListener(this);
 
         mDeviceRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.devices_refresh_layout);
-        mDeviceRefreshLayout.setColorSchemeResources(R.color.esp_actionbar_color);
+        //mDeviceRefreshLayout.setColorSchemeResources(R.color.esp_actionbar_color);
+
         mDeviceRefreshLayout.setOnRefreshListener(this);
         mDeviceListView = (ListView)view.findViewById(R.id.devices_list);
         mAllDeviceList = new ArrayList<IEspDevice>();

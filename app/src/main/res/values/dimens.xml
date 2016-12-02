@@ -9,6 +9,9 @@
     <dimen name="qr_image_width">200dip</dimen>
     <dimen name="qr_image_height">200dip</dimen>
 
+    <dimen name="activity_main_horizontal_margin">0dp</dimen>
+    <dimen name="activity_main_vertical_margin">0dp</dimen>
+
     <!-- Just for supporting Progurad of Pull Refresh -->
     <dimen name="indicator_right_padding">10dp</dimen>
     <dimen name="indicator_corner_radius">12dp</dimen>
