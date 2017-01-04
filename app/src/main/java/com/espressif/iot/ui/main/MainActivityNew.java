@@ -3,6 +3,9 @@ package com.espressif.iot.ui.main;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.net.wifi.ScanResult;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
@@ -15,6 +18,8 @@ import com.espressif.iot.R;
 import com.espressif.iot.ui.main.DrawerFragmentSearch;
 
 import org.w3c.dom.Text;
+
+import java.util.List;
 
 public  class MainActivityNew extends Activity  implements View.OnClickListener {
 
@@ -29,6 +34,9 @@ public  class MainActivityNew extends Activity  implements View.OnClickListener 
     private FrameLayout mLyContent;
 
     private FragmentManager fragmentManager;
+
+    //private WifiManager wifiManagerTest;
+    //private List<ScanResult> mWifiListTest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +51,9 @@ public  class MainActivityNew extends Activity  implements View.OnClickListener 
 
         mLyContent = (FrameLayout) findViewById(R.id.ly_content);
 
+        //wifiManagerTest = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
+        //wifiManagerTest.startScan();
+        //mWifiListTest = wifiManagerTest.getScanResults();
         mTextSearch.setOnClickListener(this);
         mTextGuide.setOnClickListener(this);
         mTextPersonal.setOnClickListener(this);

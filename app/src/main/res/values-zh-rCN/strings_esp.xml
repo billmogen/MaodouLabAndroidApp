@@ -371,4 +371,7 @@
     <string name="esp_tab_guide">指导</string>
     <string name="esp_tab_personal">个人</string>
 
+    <string name="esp_wifi_state_on">连接</string>
+    <string name="esp_wifi_state_off">断开</string>
+
 </resources>

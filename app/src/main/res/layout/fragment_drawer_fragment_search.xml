@@ -12,5 +12,26 @@
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         />
+    <View
+        android:id="@+id/wifi_div_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:background="@color/div_white"
+        android:layout_below="@id/radar_view"/>
+    <ListView
+        android:id="@+id/wifi_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/wifi_div_tab_bar"
+
+    />
+    <Switch
+        android:text="Switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_wifi"
+        android:layout_alignParentTop="true" android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" android:layout_marginTop="15dp"/>
+
 
 </RelativeLayout>

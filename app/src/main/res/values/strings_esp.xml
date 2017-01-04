@@ -373,6 +373,9 @@
     <string name="esp_tab_guide">Guide</string>
     <string name="esp_tab_personal">Personal</string>
 
+    <string name="esp_wifi_state_on">Connect</string>
+    <string name="esp_wifi_state_off">Disconnect</string>
+
 </resources>
 <!-- 
 &#8230;   =   ...

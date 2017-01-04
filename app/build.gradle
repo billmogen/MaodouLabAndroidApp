@@ -6,8 +6,8 @@ android {
 
     defaultConfig {
         applicationId "com.espressif.iot"
-        minSdkVersion 14
-        targetSdkVersion 23
+        minSdkVersion 17
+        targetSdkVersion 19
     }
 
     buildTypes {
